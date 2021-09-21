@@ -3,7 +3,6 @@ package com.finastra;
 import com.finastra.domain.Transaction;
 
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,14 +29,12 @@ public class Main {
     public static List<Transaction> readFile(String path) throws IOException {
         // Read file by class
         RegexUtil util = new RegexUtil();
-        URL uri = Main.class.getResource(path);
-        File f = new File(uri.getFile());
-        var reader = new BufferedReader(new FileReader(f));
+        InputStream uri = Main.class.getResourceAsStream(path);
+        var reader = new BufferedReader(new InputStreamReader(uri));
         String lines = reader.readLine();
         List<Transaction> transactionList = new ArrayList<>();
         /*
          * Initial transaction, in test, initial message has no $ sign
-         * Behavior may change if tank file has a $ to start with
          */
         Transaction transaction = new Transaction();
         do {

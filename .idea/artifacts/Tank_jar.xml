@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Tank:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tank_jar</output-path>
+    <root id="archive" name="Tank.jar">
+      <element id="module-output" name="Tank" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/com/finastra/TankFile2019.txt" />
+    </root>
+  </artifact>
+</component>
